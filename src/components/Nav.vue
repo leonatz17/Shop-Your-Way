@@ -2,13 +2,23 @@
 export default{
     data (){
         return{
-
+            searchbar: ''
         }
     },
     methods:{
         navigate(page) {
             this.$emit('gotoNav', page)
         },
+
+    },
+    computed: {
+        filteredProducts() {
+            if (!this.searchbar.trim()) {
+                return this.products
+            }
+            const query = this.searchbar.toLocaleLowerCase().trim();
+            return this.products.
+        }
     }
 }
 </script>
@@ -74,8 +84,9 @@ export default{
                 <img class="h-10 w-10  rounded-full" src="https://i.pinimg.com/736x/c2/af/6e/c2af6e4f4ef43d2afda4b24894d3f3b8.jpg" alt="">
                 <h1 class="font-serif font-bold text-md text-white cursor-pointer" @click="navigate('Home')">Shop Your Way</h1>
             </div>
+            <!-- search -->
             <div class="flex justify-center items-center  ">
-                <input class="bg-white h-5 w-90 text-[8px] rounded-[1px] px-1" type="text"
+                <input v-model="searchbar" class="bg-white h-5 w-90 text-[8px] rounded-[1px] px-1" type="text"
                     placeholder="Sign Up and get 100% off your order">
                 <svg class="w-5 h-4 bg-rose-400 text-white absolute left-157 rounded-[1px]  " aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
