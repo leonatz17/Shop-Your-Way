@@ -93,7 +93,7 @@ export default{
 
             </div>
         </div>
-        <button class="text-[10px] absolute text-white top-15 left-85 z-200 border-1 border-transparent hover:border-white px-3 rounded-lg cursor-pointer" @click="navigate('Products')">➜ Shop Now! Get 10% discount on your first order!</button>
+        <button class="text-[10px] absolute text-white top-20 left-85 z-200 border-1 border-transparent hover:border-white px-3 rounded-lg cursor-pointer" @click="navigate('Products')">➜ Shop Now! Get 10% discount on your first order!</button>
     </div>
 
 </template>
