@@ -15,8 +15,8 @@ export default{
 
 <template>
 
-    <div class="h-30 w-full bg-rose-400 flex relative">
-        <div class="flex gap-3 justify-start items-center top-1 px-25 text-white w-full absolute">
+    <div class="h-30 w-full bg-rose-400 flex  relative">
+        <div class="flex gap-3 justify-start items-center top-1 px-25 text-white  absolute">
             <h1 class="text-[8px] ">Selling Centre |</h1>
             <p class="text-[8px] ">Products |</p>
             <p class="text-[8px] ">Start Selling |</p>
