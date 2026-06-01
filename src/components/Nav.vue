@@ -15,12 +15,13 @@ export default{
 
 <template>
 
-    <div class="h-20 w-full bg-rose-400 flex relative">
+    <div class="h-30 w-full bg-rose-400 flex relative">
         <div class="flex gap-3 justify-start items-center top-1 px-25 text-white absolute">
             <h1 class="text-[8px] ">Selling Centre |</h1>
             <p class="text-[8px] ">Products |</p>
             <p class="text-[8px] ">Start Selling |</p>
-            <p class="text-[8px]  ">Follow us</p> <svg class="w-2 h-2 ring-1 text-white rounded-full" aria-hidden="true"
+            <p class="text-[8px]  ">Follow us</p> 
+            <svg class="w-2 h-2 ring-1 text-white rounded-full" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"
                     d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
