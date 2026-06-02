@@ -9,6 +9,9 @@ export default{
         navigate(page) {
             this.$emit('gotoNav', page)
         },
+        searchBar(){
+            this.$emit('gotoSearchbar')
+        }
 
     },
     // search logic

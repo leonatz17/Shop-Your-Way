@@ -35,7 +35,7 @@ export default{
 <template>
   <Nav @gotoNav="pageChange"/>
   <Home v-if="currentpage === 'Home'" />
-  <Products v-if="currentpage === 'Products'" @addCart="handleCart"/>
+  <Products v-if="currentpage === 'Products'" @addCart="handleCart" @gotoSearchbar="searchbar"/>
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart"/>
   
 
