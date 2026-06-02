@@ -37,9 +37,9 @@ export default{
 </script>
 
 <template>
-  <Nav @gotoNav="pageChange" @pass="handlesearch" />
+  <Nav @gotoNav="pageChange"  />
   <Home v-if="currentpage === 'Home'" />
-  <Products v-if="currentpage === 'Products'" @addCart="handleCart" :search="searchbar"/>
+  <Products v-if="currentpage === 'Products'" @addCart="handleCart" @pass="handlesearch" :search="searchbar"/>
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart"/>
   
 
