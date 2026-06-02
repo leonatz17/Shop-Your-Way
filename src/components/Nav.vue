@@ -15,17 +15,7 @@ export default{
 
     },
     // search logic
-    computed: {
-        filteredProducts() {
-            if (!this.searchbar.trim()) {
-                return this.product
-            }
-            const query = this.searchbar.toLocaleLowerCase().trim();
-            return this.product.filter(product => 
-                product.name.toLocaleLowerCase().includes(query)
-            ) 
-        }
-    }
+   
 }
 </script>
 
