@@ -12,11 +12,11 @@ export default {
      computed: {
         filteredProducts() {
             if (!this.search.trim()) {
-                return this.product
+                return this.products
             }
             const query = this.search.toLocaleLowerCase().trim();
-            return this.product.filter(product => 
-                product.name.toLocaleLowerCase().includes(query)
+            return this.products.filter(products => 
+                products.name.toLocaleLowerCase().includes(query)
             ) 
         }
     },
