@@ -5,12 +5,14 @@ import Products from './assets/modal/Products.vue';
 import InCartproducts from './assets/modal/InCartproducts.vue';
 
 
+
 export default{
   components:{
     Nav,
     Home,
     Products,
-    InCartproducts
+    InCartproducts,
+    
   
   },
   data (){
@@ -18,7 +20,8 @@ export default{
       currentpage: 'Home',
       cart:[],
       showproduct:false,
-      searchbar: ''
+      searchbar: '',
+      checkout:[]
     }
   },
   methods:{
@@ -31,6 +34,9 @@ export default{
   },
   handlesearch(search){
     this.searchbar = search;
+  },
+  handleCheckOut(product){
+    this.checkout.push({...product})
   }
 }
 }
@@ -40,7 +46,8 @@ export default{
   <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart"  :searchBar="searchbar"/>
-  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart"/>
+  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" @checkout="handleCheckOut"/>
+  
   
 
 </template>

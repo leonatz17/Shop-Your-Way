@@ -12,14 +12,22 @@ export default {
     data() {
         return {
             showtransaction: false,
-            cart: true
+            cart: true,
+            items:true,
+            currentindex: 0
+            
         }
     },
+    emits:['checkout'],
     methods: {
-        transactionPage() {
+       
+        checkOut(product){
+            this.$emit('checkout', {...product})
             this.showtransaction = true;
             this.cart = false;
         }
+        
+        
     }
 
 }
@@ -40,11 +48,11 @@ export default {
                         <button class="text-[10px] text-rose-500 ">₱{{ items.price }} </button>
                         <p class="text-[10px] text-rose-500">{{ items.sold }} sold</p>
                     </div>
-                    <button class="bg-rose-500 text-white text-[8px] font-bold px-3" @click="transactionPage">Check
+                    <button class="bg-rose-500 text-white text-[8px] font-bold px-3" @click="checkOut">Check
                         Out</button>
                 </div>
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction" />
+    <Transaction v-if="showtransaction" :checkoutproducts="products[currentindex]" @checkout=""/>
 </template>

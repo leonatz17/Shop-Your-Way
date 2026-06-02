@@ -1,5 +1,22 @@
 <script>
+export default{
+    props:{
+        checkoutproducts:{
+            type: Object
+        }
+    },
+    data (){
+        return{
 
+        }
+    },
+    emits:['checkout'],
+    methods:{
+        checkOut(){
+            this.$emit('checkout', this.checkoutproducts)
+        }
+    }
+}
 </script>
 
 <template>
@@ -9,7 +26,7 @@
     <div class="flex flex-col justify-center items-center">
         <div class="h-15 w-170 bg-white shadow-lg/10">
             <h1 class="text-sm p-2 text-rose-500 font-serif">Delivery Address</h1>
-            <Address class="text-sm text-rose-500 font-serif px-2">London</Address>
+            <h1 class="text-sm text-rose-500 font-serif px-2">London</h1>
         </div>
     </div>
     <div class="flex justify-center">
@@ -20,11 +37,11 @@
             <div class="flex">
                 <div class="px-2">
                     <img class="h-20 w-30  border-1 border-gray-300 object-fit"
-                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202509_FMT_WHH?wid=752&hei=720&fmt=p-jpg&qlt=80&.v=aTVJSEliNW9jb25zalBlTm16VmMxcWpkNHRJWDMzcTg3NWRxV0pydTcvSVp4NXJDNGVkMzRBYjNGWEpDbWxSU1FpSGNzd2tweC9iNG8vcjRUd2FLNUswekI5ZWpRa0o2WWdVYzdzTUdBdFZKUWJBeENTM2lhWlROOVJJQW05cFI"
+                        :src="checkoutproducts.image"
                         alt="">
                 </div>
                 <div class="mt-8">
-                    <h1 class="text-rose-500 font-serif text-[12px] text-center">Watch</h1>
+                    <h1 class="text-rose-500 font-serif text-[12px] text-center">{{ checkoutproducts.name }}</h1>
                 </div>
             </div>
         </div>
@@ -44,7 +61,7 @@
     <div class="flex justify-center mt-3">
         <div class="h-10 w-80 bg-white shadow-lg/10">
             <div class="flex  justify-between text-[10px] px-3 font-serif text-rose-500 p-3 border-b border-rose-300 ">
-                <h1>E-voice</h1>
+                <h1>E-Invoice</h1>
                 <h1 class="text-gray-400">Request Now</h1>
             </div>
 
