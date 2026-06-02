@@ -11,10 +11,10 @@ export default {
     },
      computed: {
         filteredProducts() {
-            if (!this.searchbar.trim()) {
+            if (!this.search.trim()) {
                 return this.product
             }
-            const query = this.searchbar.toLocaleLowerCase().trim();
+            const query = this.search.toLocaleLowerCase().trim();
             return this.product.filter(product => 
                 product.name.toLocaleLowerCase().includes(query)
             ) 
@@ -156,7 +156,7 @@ export default {
             ],
             currentIndex: 0,
             showproduct: false,
-            searchbar:''
+            
             
         }
     },
