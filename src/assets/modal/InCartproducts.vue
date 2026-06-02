@@ -35,7 +35,7 @@ export default {
 
 <template>
 
-    <div v-if="cart">
+    <div v-if="items">
         <div class="grid grid-cols-4">
             <div v-for="items in cartItems" :key="items.id"
                 class="h-50 w-45 bg-white shadow-lg border-1 border-transparent hover:border-pink-500 relative mb-3 mt-4">
@@ -54,5 +54,5 @@ export default {
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction" :checkoutproducts="products[currentindex]" @checkout=""/>
+    <Transaction v-if="showtransaction" :checkoutproducts="products[currentindex]" @checkout="checkOut"/>
 </template>
