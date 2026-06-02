@@ -9,7 +9,7 @@ export default{
 </script>
 
 <template>
-    
+    <button class="bg-pink-500 text-white text-lg mt-4 px-3">Transaction History</button>
     <div>
        <div  class="grid grid-cols-4">
         <div v-for="items in cartItems" :key="items.id"
