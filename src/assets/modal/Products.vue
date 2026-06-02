@@ -4,6 +4,11 @@ export default {
     components:{
         Addtocart
     },
+    props:{
+        search:{
+            type: String
+        }
+    },
     data() {
         return {
             products: [
@@ -158,7 +163,7 @@ export default {
 
 <template>
     <div class="grid grid-cols-4 px-10">
-        <div v-for="(product, index) in filteredProducts "
+        <div v-for="(product, index) in filteredProducts " :key="product.id"
             class="h-50 w-45 bg-white shadow-lg border-1 border-transparent hover:border-pink-500 relative mb-3 mt-4">
 
             <img class="h-30 w-45  object-cover object-center" :src="product.img" alt="">

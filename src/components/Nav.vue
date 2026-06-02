@@ -10,7 +10,7 @@ export default{
             this.$emit('gotoNav', page)
         },
         searchBar(){
-            this.$emit('gotoSearchbar')
+            this.$emit('pass', this.searchBar)
         }
 
     },
@@ -92,7 +92,7 @@ export default{
             </div>
             <!-- search -->
             <div class="flex justify-center items-center  ">
-                <input v-model="searchbar" class="bg-white h-5 w-90 text-[8px] rounded-[1px] px-1" type="text"
+                <input v-model="searchbar" @change="searchBar" class="bg-white h-5 w-90 text-[8px] rounded-[1px] px-1" type="text"
                     placeholder="Sign Up and get 100% off your order">
                 <svg class="w-5 h-4 bg-rose-400 text-white absolute left-157 rounded-[1px]  " aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

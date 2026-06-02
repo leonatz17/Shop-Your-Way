@@ -17,7 +17,8 @@ export default{
     return{
       currentpage: 'Home',
       cart:[],
-      showproduct:false
+      showproduct:false,
+      searchbar: ''
     }
   },
   methods:{
@@ -27,13 +28,16 @@ export default{
     },
     handleCart(product) {
       this.cart.push({ ...product })
+  },
+  handlesearch(pass){
+    this.searchbar = pass
   }
 }
 }
 </script>
 
 <template>
-  <Nav @gotoNav="pageChange"/>
+  <Nav @gotoNav="pageChange" @pass="handlesearch" :search="searchbar"/>
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart" />
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart"/>
