@@ -156,6 +156,7 @@ export default {
             ],
             currentIndex: 0,
             showproduct: false,
+            searchbar: ''
         }
     },
     methods: {
