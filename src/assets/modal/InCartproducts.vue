@@ -1,15 +1,30 @@
 <script>
+import Transaction from '../components/Transaction.vue';
 export default{
+    components:{
+        Transaction
+    },
     props:{
          cartItems: {
             type: Array
         }
+    },
+    data (){
+        return{
+            showtransaction: false,
+        }
+    },
+    methods:{
+        transactionPage(){
+            this.showtransaction = true;
+        }
     }
+
 }
 </script>
 
 <template>
-    <button class="bg-pink-500 text-white text-lg mt-4 px-3">Transaction History</button>
+    <button class="bg-pink-500 text-white text-lg mt-4 px-3" @click="transactionPage">Transaction History</button>
     <div>
        <div  class="grid grid-cols-4">
         <div v-for="items in cartItems" :key="items.id"
@@ -28,4 +43,5 @@ export default{
         </div>
     </div>
     </div>
+    <Transaction v-if="showtransaction" />
 </template>
