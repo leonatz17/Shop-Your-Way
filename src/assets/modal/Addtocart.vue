@@ -5,6 +5,7 @@ export default {
             type: Object
         }
     },
+    emits:['addToCart'],
     methods: {
         cart() {
             this.$emit('addToCart', this.selectedproducts)

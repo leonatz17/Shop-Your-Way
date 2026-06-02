@@ -29,17 +29,17 @@ export default{
     handleCart(product) {
       this.cart.push({ ...product })
   },
-  handlesearch(pass){
-    this.searchbar = pass
+  handlesearch(search){
+    this.searchbar = search;
   }
 }
 }
 </script>
 
 <template>
-  <Nav @gotoNav="pageChange"  />
+  <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
   <Home v-if="currentpage === 'Home'" />
-  <Products v-if="currentpage === 'Products'" @addCart="handleCart" @pass="handlesearch" :search="searchbar"/>
+  <Products v-if="currentpage === 'Products'" @addCart="handleCart"  :searchBar="searchbar"/>
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart"/>
   
 

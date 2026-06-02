@@ -5,12 +5,13 @@ export default{
             searchbar: ''
         }
     },
+    emits: ['passedValue', 'gotoNav'],
     methods:{
         navigate(page) {
             this.$emit('gotoNav', page)
         },
         search(){
-            this.$emit('pass', this.searchBar)
+            this.$emit('passedValue', this.searchbar)
         }
 
     },
