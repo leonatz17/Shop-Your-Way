@@ -17,6 +17,7 @@ export default {
             items: true,
             currentindex: 0,
             checkoutCart: [],
+            historyCart:[]
         }
     },
     emits: ['checkout'],
@@ -31,9 +32,17 @@ export default {
             
             
         },
-        
-
-
+        purchaseHistory() {
+            // this.$emit('checkout',  ...product )
+            this.historyCart.push(...this.checkoutCart)
+            this.showtransaction = true;
+            this.cart = false;
+            this.showproduct = false;
+        },
+        purchased(){
+            this.$emit('history')
+        },
+        emits:['history']
     }
 
 }
@@ -60,5 +69,5 @@ export default {
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction"  @checkout="checkOut" :checkoutproducts="checkoutCart"  />
+    <Transaction v-if="showtransaction"  @checkout="checkOut" :checkoutproducts="checkoutCart" @producthistory="purchaseHistory" />
 </template>

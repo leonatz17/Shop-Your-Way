@@ -22,7 +22,8 @@ export default {
       cart: [],
       showproduct: false,
       searchbar: '',
-      checkedout: []
+      checkedout: [],
+      purchased:[]
 
     }
   },
@@ -41,6 +42,9 @@ export default {
     handleCheckOut(product) {
       this.checkedout.push({ ...product })
 
+    },
+    handlePurchased(product){
+      this.purchased.push(... product)
     }
 
   }
@@ -52,7 +56,7 @@ export default {
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" />
-  <Orderhistory v-if="currentpage === 'History'" @producthistory=""/>
+  <Orderhistory v-if="currentpage === 'History'" @history="handlePurchased" :history="purchased"/>
 
 
 

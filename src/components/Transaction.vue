@@ -15,13 +15,15 @@ export default {
     emits: ['checkout'],
     methods: {
         checkOut() {
-            this.$emit('checkout')
+            this.$emit('checkout ')
             
         },
-        placeOrder() {
-            this.order = false;
+         placedOrder(){
+            this.$emit('producthistory')
+             this.order = false;
             
-        }
+        },
+        emits:['producthistory'],
     }
 }
 </script>
@@ -112,7 +114,7 @@ export default {
 
                 </div>
                 <div class="flex justify-end py-5 px-5">
-                    <button class="bg-rose-600 font-serif text-[15px] text-white px-3" @click="placeOrder">Place
+                    <button class="bg-rose-600 font-serif text-[15px] text-white px-3" @click="placedOrder" >Place
                         Order</button>
                 </div>
             </div>
