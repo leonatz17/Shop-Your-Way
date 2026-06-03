@@ -9,22 +9,22 @@ export default {
             type: Array
         }
     },
+    emits: ['checkout'],
     data() {
         return {
             showtransaction: false,
             cart: true,
             items: true,
             currentindex: 0,
-           
-
-
+            checkoutCart: [],
         }
     },
     emits: ['checkout'],
     methods: {
 
-        checkOut(product) {
-            this.$emit('checkout', { ...product })
+        checkOut() {
+            // this.$emit('checkout',  ...product )
+            this.checkoutCart.push(...this.cartItems)
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
@@ -60,5 +60,5 @@ export default {
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction"  @checkout="checkOut" />
+    <Transaction v-if="showtransaction"  @checkout="checkOut" :checkoutproducts="checkoutCart"  />
 </template>

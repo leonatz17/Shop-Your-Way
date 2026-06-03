@@ -50,7 +50,7 @@ export default {
   <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
-  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" :checkoutproducts="checkedout" />
+  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" />
 
 
 
