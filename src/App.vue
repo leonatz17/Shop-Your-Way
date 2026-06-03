@@ -21,7 +21,7 @@ export default{
       cart:[],
       showproduct:false,
       searchbar: '',
-      checkout:[]
+    
     }
   },
   methods:{
@@ -35,9 +35,7 @@ export default{
   handlesearch(search){
     this.searchbar = search;
   },
-  handleCheckOut(product){
-    this.checkout.push({...product})
-  }
+ 
 }
 }
 </script>
@@ -46,7 +44,7 @@ export default{
   <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart"  :searchBar="searchbar"/>
-  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" @checkout="handleCheckOut"/>
+  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" />
   
   
 

@@ -13,21 +13,27 @@ export default {
         return {
             showtransaction: false,
             cart: true,
-            items:true,
-            currentindex: 0
-            
+            items: true,
+            currentindex: 0,
+            checkedout:[]
+
+
         }
     },
-    emits:['checkout'],
+    emits: ['checkout'],
     methods: {
-       
-        checkOut(product){
-            this.$emit('checkout', {...product})
+
+        checkOut(product) {
+            this.$emit('checkout', { ...product })
             this.showtransaction = true;
             this.cart = false;
+            this.showproduct = false;
+        },
+        handleCheckOut(product) {
+            this.checkedout.push({ ...product })
         }
-        
-        
+
+
     }
 
 }
@@ -54,5 +60,5 @@ export default {
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction" :checkoutproducts="products[currentindex]" @checkout="checkOut"/>
+    <Transaction v-if="showtransaction" :checkoutproducts="checkedout" @checkout="checkOut" />
 </template>
