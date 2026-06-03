@@ -22,7 +22,6 @@ export default {
          placedOrder(){
             this.$emit('producthistory')
              this.order = false;  
-             this.products = false;
         },
     },
      emits:['producthistory'],
