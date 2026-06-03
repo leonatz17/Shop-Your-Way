@@ -3,7 +3,8 @@ export default{
     props:{
         History:{
             type: Array
-        }
+        },
+        
     },
     data (){
         return{
@@ -20,7 +21,7 @@ export default{
 
 <template>
     <div class="flex justify-center relative">
-        <div class="h-50 w-30 bg-rose-100/20 mt-4">
+        <div class="h-50 w-30 bg-rose-100/20 mt-4 shadow-lg">
             <div class="flex items-center px-3 ">
                 <div class="">
                     <img class="h-10 w-10 rounded-full"
@@ -76,7 +77,7 @@ export default{
                 </div>
             </div>
         </div>
-        <div class="h-10 w-120 bg-white shadow-lg/10 mt-4 ">
+        <div class="h-10 w-120 bg-white shadow-lg mt-4 ">
             <div class="text-rose-500 text-[12px] font-serif flex justify-between py-2 px-3">
                 <button>All</button>
                 <button>To Pay</button>
@@ -116,7 +117,7 @@ export default{
     <div class="h-10 w-120 bg-white shadow-sm ml-65">
         <div class="flex gap-3 justify-end p-3">
             <h1 class="font-serif text-rose-500">Order Total:</h1>
-            <h1 class="bg-rose-600 text-white font-serif px-3">₱ 200.00</h1>
+            <h1 class="bg-rose-600 text-white font-serif px-3">₱</h1>
         </div>
     </div>
 

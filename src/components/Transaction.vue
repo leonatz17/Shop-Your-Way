@@ -5,6 +5,7 @@ export default {
             type: Array
         },
         
+        
     },
     data() {
         return {
@@ -21,6 +22,7 @@ export default {
          placedOrder(){
             this.$emit('producthistory')
              this.order = false;  
+             this.products = false;
         },
     },
      emits:['producthistory'],

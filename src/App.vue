@@ -53,12 +53,11 @@ export default {
 </script>
 
 <template>
-  <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
-  <Home v-if="currentpage === 'Home'" />
-  <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
-  <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" />
-  <Orderhistory v-if="currentpage === 'History'" @history="handlePurchased" :History="purchased"/>
-
-
-
+  <div>
+    <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
+    <Home v-if="currentpage === 'Home'" />
+    <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
+    <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart"  />
+    <Orderhistory v-if="currentpage === 'History'" @history="handlePurchased" :History="purchased" />
+  </div>
 </template>
