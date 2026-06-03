@@ -15,7 +15,7 @@ export default {
             cart: true,
             items: true,
             currentindex: 0,
-            checkedout:[]
+           
 
 
         }
@@ -28,10 +28,10 @@ export default {
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
+            
+            
         },
-        handleCheckOut(product) {
-            this.checkedout.push({ ...product })
-        }
+        
 
 
     }
@@ -60,5 +60,5 @@ export default {
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction" :checkoutproducts="checkedout" @checkout="checkOut" />
+    <Transaction v-if="showtransaction"  @checkout="checkOut" />
 </template>

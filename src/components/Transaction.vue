@@ -2,7 +2,7 @@
 export default {
     props: {
         checkoutproducts: {
-            type: Object
+            type: Array
         }
     },
     data() {
@@ -15,15 +15,16 @@ export default {
         checkOut() {
             this.$emit('checkout')
         },
-        // placeOrder() {
-        //     this.order = false;
-        // }
+        placeOrder() {
+            this.order = false;
+            
+        }
     }
 }
 </script>
 
 <template>
-    <div >
+    <div v-if="order">
         <div  class="h-15 w-full bg-white border-b border-rose-500">
             <h1 class="text-xl text-rose-500 font-serif p-5">Check Out</h1>
         </div>
@@ -49,12 +50,12 @@ export default {
             </div>
             <div class="h-35 w-90 bg-white shadow-lg/10 mt-4 border-b border-rose-300">
                 <div class="  flex justify-between px-5  gap-4 text-rose-500 font-serif text-[10px] p-2">
-                    <h2>Unit Price</h2>
+                    <h2>{{ checked.price }}</h2>
                     <h2>Qty.</h2>
                     <h2>Item Subtotal</h2>
                 </div>
                 <div class="flex justify-between px-5  gap-4 text-rose-500 font-serif text-[10px] mt-8">
-                    <h1>₱ {{ checked }}</h1>
+                    <h1>₱</h1>
                     <h1>1</h1>
                     <h1>₱ 200.00</h1>
                 </div>
@@ -108,7 +109,7 @@ export default {
 
                 </div>
                 <div class="flex justify-end py-5 px-5">
-                    <button class="bg-rose-600 font-serif text-[15px] text-white px-3">Place
+                    <button class="bg-rose-600 font-serif text-[15px] text-white px-3" @click="placeOrder">Place
                         Order</button>
                 </div>
             </div>
