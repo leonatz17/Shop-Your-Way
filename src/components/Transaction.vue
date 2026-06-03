@@ -20,11 +20,10 @@ export default {
         },
          placedOrder(){
             this.$emit('producthistory')
-             this.order = false;
-            
+             this.order = false;  
         },
-        emits:['producthistory'],
-    }
+    },
+     emits:['producthistory'],
 }
 </script>
 
@@ -113,8 +112,8 @@ export default {
                     </div>
 
                 </div>
-                <div class="flex justify-end py-5 px-5">
-                    <button class="bg-rose-600 font-serif text-[15px] text-white px-3" @click="placedOrder" >Place
+                <div class="flex justify-end py-5 px-5" >
+                    <button class="bg-rose-600 font-serif text-[15px] text-white px-3" @click="placedOrder">Place
                         Order</button>
                 </div>
             </div>

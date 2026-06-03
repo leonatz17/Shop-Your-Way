@@ -1,8 +1,8 @@
 <script>
 export default{
     props:{
-        history:{
-            type: Object
+        History:{
+            type: Array
         }
     },
     data (){
@@ -87,7 +87,7 @@ export default{
             </div>
         </div>
 
-        <div v-for="purchased in history" class="flex absolute top-14 left-65">
+        <div v-for="purchased in History" class="flex absolute top-14 left-65">
             <div class="h-35 w-50 bg-white shadow-sm flex flex-col justify-start  mt-4  border-b border-rose-300">
 
                 <div class="flex mt-4">

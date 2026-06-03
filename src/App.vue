@@ -44,10 +44,11 @@ export default {
 
     },
     handlePurchased(product){
-      this.purchased.push(... product)
+      this.purchased.push({... product})
     }
 
-  }
+  },
+  
 }
 </script>
 
@@ -56,7 +57,7 @@ export default {
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" />
-  <Orderhistory v-if="currentpage === 'History'" @history="handlePurchased" :history="purchased"/>
+  <Orderhistory v-if="currentpage === 'History'" @history="handlePurchased" :History="purchased"/>
 
 
 

@@ -9,7 +9,7 @@ export default {
             type: Array
         }
     },
-    emits: ['checkout'],
+    emits: ['checkout', 'history'],
     data() {
         return {
             showtransaction: false,
@@ -20,29 +20,22 @@ export default {
             historyCart:[]
         }
     },
-    emits: ['checkout'],
     methods: {
-
         checkOut() {
             // this.$emit('checkout',  ...product )
             this.checkoutCart.push(...this.cartItems)
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
-            
-            
         },
         purchaseHistory() {
+            this.$emit('history')
             // this.$emit('checkout',  ...product )
             this.historyCart.push(...this.checkoutCart)
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
-        },
-        purchased(){
-            this.$emit('history')
-        },
-        emits:['history']
+        }
     }
 
 }
