@@ -3,7 +3,7 @@ import Nav from './components/Nav.vue';
 import Home from './components/Home.vue';
 import Products from './assets/modal/Products.vue';
 import InCartproducts from './assets/modal/InCartproducts.vue';
-
+import Orderhistory from './assets/modal/Orderhistory.vue';
 
 
 export default {
@@ -12,6 +12,7 @@ export default {
     Home,
     Products,
     InCartproducts,
+    Orderhistory
 
 
   },
@@ -51,6 +52,7 @@ export default {
   <Home v-if="currentpage === 'Home'" />
   <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
   <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" />
+  <Orderhistory v-if="currentpage === 'History'" @producthistory=""/>
 
 
 
