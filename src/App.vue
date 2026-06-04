@@ -43,7 +43,7 @@ export default {
       this.checkedout.push({ ...product })
 
     },
-    handlePurchased(product){
+    handleHistory(product){
       this.purchased.push({... product})
     }
 
@@ -57,7 +57,7 @@ export default {
     <Nav @gotoNav="pageChange" @passedValue="handlesearch" />
     <Home v-if="currentpage === 'Home'" />
     <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
-    <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" @history="handlePurchased"/>
+    <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" @history="handleHistory"/>
     <Orderhistory v-if="currentpage === 'History'"  :History="purchased" />
   </div>
 </template>

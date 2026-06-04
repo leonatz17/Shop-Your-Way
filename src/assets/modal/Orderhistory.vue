@@ -1,7 +1,7 @@
 <script>
 export default{
     props:{
-        orderHistory:{
+        History:{
             type: Array
         },
         
@@ -88,15 +88,15 @@ export default{
             </div>
         </div>
 
-        <div v-for="purchased in orderHistory" class="flex absolute top-14 left-65">
+        <div  class="flex absolute top-14 left-65">
             <div class="h-35 w-50 bg-white shadow-sm flex flex-col justify-start  mt-4  border-b border-rose-300">
 
                 <div class="flex mt-4">
                     <div class="px-2">
-                        <img class="h-20 w-30  border-1 border-gray-300 object-fit" :src="purchased.img" alt="product image">
+                        <img class="h-20 w-30  border-1 border-gray-300 object-fit" :src="History.img" alt="product image">
                     </div>
                     <div class="mt-8">
-                        <h1 class="text-rose-500 font-serif text-[12px] text-center">{{ purchased.name }}</h1>
+                        <h1 class="text-rose-500 font-serif text-[12px] text-center">{{ History.name }}</h1>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ export default{
                     <h2>Item Subtotal</h2>
                 </div>
                 <div class="flex justify-between px-5  gap-4 text-rose-500 font-serif text-[10px] mt-8">
-                    <h1>₱{{ purchased.price }}</h1>
+                    <h1>₱{{ History.price }}</h1>
                     <h1>1</h1>
                     <h1>₱</h1>
                 </div>
