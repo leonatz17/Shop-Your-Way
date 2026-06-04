@@ -21,9 +21,10 @@ export default {
         }
     },
     methods: {
-        checkOut(items) {
+        checkOut(index) {
             // this.$emit('checkout',  ...product )
-            this.checkoutCart.push(...items)
+            this.checkoutCart.push(...this.cartItems)
+            this.currentindex = index
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
@@ -57,11 +58,11 @@ export default {
                         <button class="text-[10px] text-rose-500 ">₱{{ items.price }} </button>
                         <p class="text-[10px] text-rose-500">{{ items.sold }} sold</p>
                     </div>
-                    <button class="bg-rose-500 text-white text-[8px] font-bold px-3" @click="checkOut(items)">Check
+                    <button class="bg-rose-500 text-white text-[8px] font-bold px-3" @click="checkOut(index)">Check
                         Out</button>
                 </div>
             </div>
         </div>
     </div>
-    <Transaction v-if="showtransaction"  @checkout="checkOut" :checkoutproducts="checkoutCart" @producthistory="purchaseHistory" />
+    <Transaction v-if="showtransaction"  @checkout="checkOut" :checkoutproducts="cartItems[currentindex]" @producthistory="purchaseHistory" />
 </template>

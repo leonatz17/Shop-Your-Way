@@ -39,8 +39,8 @@ export default {
     handlesearch(search) {
       this.searchbar = search;
     },
-    handleCheckOut(items) {
-      this.checkedout.push({ ...items })
+    handleCheckOut(product) {
+      this.checkedout.push({ ...product })
 
     },
     handlePurchased(product){
