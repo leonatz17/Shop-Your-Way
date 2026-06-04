@@ -58,6 +58,6 @@ export default {
     <Home v-if="currentpage === 'Home'" />
     <Products v-if="currentpage === 'Products'" @addCart="handleCart" :searchBar="searchbar" @checkout="handleCheckOut" />
     <InCartproducts v-if="currentpage === 'Cart'" :cartItems="cart" @history="handlePurchased"/>
-    <Orderhistory v-if="currentpage === 'History'"  :orderHistory="purchased" />
+    <Orderhistory v-if="currentpage === 'History'"  :History="purchased" />
   </div>
 </template>

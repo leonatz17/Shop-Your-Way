@@ -10,7 +10,7 @@ export default {
     data() {
         return {
             order: true,
-            currentIndex: 0
+            
         }
     },
     emits: ['checkout'],
@@ -39,17 +39,17 @@ export default {
                 <h1 class="text-sm text-rose-500 font-serif px-2">London</h1>
             </div>
         </div>
-        <div   class="flex justify-center">
+        <div  v-for="value in checkoutproducts" class="flex justify-center">
             <div class="h-35 w-80 bg-white shadow-lg/10 flex flex-col justify-start  mt-4  border-b border-rose-300">
                 <div>
                     <h2 class="text-[10px] p-2 text-rose-500 font-serif">Products Ordered</h2>
                 </div>
                 <div class="flex">
                     <div class="px-2">
-                        <img class="h-20 w-30  border-1 border-gray-300 object-fit" :src="checkoutproducts.img" alt="products">
+                        <img :src="value.img" alt="" class="h-20 w-30  border-1 border-gray-300 object-fit" >
                     </div>
                     <div class="mt-8">
-                        <h1 class="text-rose-500 font-serif text-[12px] text-center">{{ checkoutproducts.name }}</h1>
+                        <h1 class="text-rose-500 font-serif text-[12px] text-center">{{ value.name }}</h1>
                     </div>
                 </div>
             </div>
@@ -60,9 +60,9 @@ export default {
                     <h2>Item Subtotal</h2>
                 </div>
                 <div class="flex justify-between px-5  gap-4 text-rose-500 font-serif text-[10px] mt-8">
-                    <h1>₱{{ checkoutproducts.price }}</h1>
+                    <h1>₱{{ value.price }}</h1>
                     <h1>1</h1>
-                    <h1>₱{{ checkoutproducts.price }}</h1>
+                    <h1>₱{{ value.price }}</h1>
                 </div>
             </div>
         </div>
