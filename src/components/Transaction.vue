@@ -16,7 +16,7 @@ export default {
     emits: ['checkout'],
     methods: {
         checkOut() {
-            this.$emit('checkout ')
+            this.$emit('checkout', this.items)
             
         },
          placedOrder(){

@@ -21,15 +21,15 @@ export default {
         }
     },
     methods: {
-        checkOut() {
+        checkOut(items) {
             // this.$emit('checkout',  ...product )
-            this.checkoutCart.push(...this.cartItems)
+            this.checkoutCart.push(...items)
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
         },
         purchaseHistory() {
-            this.$emit('history')
+            this.$emit('history', this.historyCart)
             this.historyCart.push(...this.cartItems)
             this.showtransaction = true;
             this.cart = false;
@@ -41,7 +41,9 @@ export default {
 </script>
 
 <template>
-
+    <div class="px-4 py-4">
+        <h1 class="text-rose-500 text-lg font-serif font-semibold">My Orders.</h1>
+    </div>
     <div v-if="items">
         <div class="grid grid-cols-4">
             <div v-for="items in cartItems" :key="items.id"
@@ -55,7 +57,7 @@ export default {
                         <button class="text-[10px] text-rose-500 ">₱{{ items.price }} </button>
                         <p class="text-[10px] text-rose-500">{{ items.sold }} sold</p>
                     </div>
-                    <button class="bg-rose-500 text-white text-[8px] font-bold px-3" @click="checkOut">Check
+                    <button class="bg-rose-500 text-white text-[8px] font-bold px-3" @click="checkOut(items)">Check
                         Out</button>
                 </div>
             </div>
