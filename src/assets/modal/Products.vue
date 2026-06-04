@@ -9,7 +9,7 @@ export default {
             type: String
         }
     },
-    emits:['addCart'],
+   
     data() {
         return {
             products: [
@@ -168,7 +168,8 @@ export default {
             this.$emit('addCart', { ...product })
             this.showproduct = false;
         
-    }
+    },
+     emits:['addCart'],
 }
 }
 </script>
