@@ -100,7 +100,7 @@ export default{
                     </div>
                 </div>
             </div>
-            <div class="h-35 w-70 bg-white shadow-lg/10 mt-4 border-b border-rose-300">
+            <div class="h-35 w-70 bg-white shadow-sm mt-4 border-b border-rose-300">
                 <div class="  flex justify-between px-5  gap-4 text-rose-500 font-serif text-[10px] p-2">
                     <h2>Unit Price</h2>
                     <h2>Qty.</h2>
