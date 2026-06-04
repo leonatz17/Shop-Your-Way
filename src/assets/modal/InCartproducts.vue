@@ -30,7 +30,6 @@ export default {
         },
         purchaseHistory() {
             this.$emit('history')
-            // this.$emit('checkout',  ...product )
             this.historyCart.push(...this.cartItems)
             this.showtransaction = true;
             this.cart = false;
