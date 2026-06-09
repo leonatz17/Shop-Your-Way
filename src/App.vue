@@ -43,9 +43,10 @@ export default {
       this.checkedout.push({ ...product })
 
     },
-    handleHistory(product){
-      this.purchased.push({... product})
-    }
+    handleHistory(items) {
+      this.purchased.push(...items)
+      this.cart = []
+    },
 
   },
   

@@ -17,7 +17,9 @@ export default {
             items: true,
             currentindex: 0,
             checkoutCart: [],
-            historyCart:[]
+            historyCart:[],
+            myorder: true,
+            empty: false,
         }
     },
     methods: {
@@ -30,11 +32,13 @@ export default {
             this.showproduct = false;
         },
         purchaseHistory() {
-            this.$emit('history')
+            this.$emit('history', this.cartItems)
             this.historyCart.push(...this.cartItems)
             this.showtransaction = true;
             this.cart = false;
             this.showproduct = false;
+            this.myorder = false;
+            this.empty = true;
         }
     }
 
@@ -43,8 +47,12 @@ export default {
 
 <template>
     <div>
-        <div class="px-4 py-4">
+        <div v-if="myorder" class="px-4 py-4">
             <h1 class="text-rose-500 text-lg font-serif font-semibold">My Orders.</h1>
+        </div>
+
+        <div v-if="empty" class="mt-10 ">
+            <h1 class="text-rose-500 text-lg font-serif font-semibold text-center">Cart is Empty.</h1>
         </div>
 
         <div v-if="items" class="relative">
